@@ -1,0 +1,10 @@
+
+Read from /var/spool/torque/aux//19346.mighty.local
+This job runs on these processors:
+compute-0-4 compute-0-4
+This is id 0 total proc 2
+This is the master proc
+This is id 1 total proc 2
+This is the slave proc
+Pi for proc 1 is: 3.14168
+Pi for proc 0 is: 3.1418

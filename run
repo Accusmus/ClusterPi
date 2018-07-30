@@ -1,0 +1,2 @@
+mpic++ assignment1.cpp -o assignment1
+qsub assignment1.pbs

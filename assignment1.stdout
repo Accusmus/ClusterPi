@@ -1,0 +1,124 @@
+Read from /var/spool/torque/aux//20035.mighty.local
+This job runs on these processors:
+compute-0-4 compute-0-4 compute-0-4 compute-0-4 compute-0-4 compute-0-4 compute-0-4 compute-0-4 compute-0-3 compute-0-3 compute-0-3 compute-0-3 compute-0-3 compute-0-3 compute-0-3 compute-0-3 compute-0-2 compute-0-2 compute-0-2 compute-0-2 compute-0-2 compute-0-2 compute-0-2 compute-0-2 compute-0-1 compute-0-1 compute-0-1 compute-0-1 compute-0-1 compute-0-1 compute-0-1 compute-0-1 compute-0-0 compute-0-0 compute-0-0 compute-0-0 compute-0-0 compute-0-0 compute-0-0 compute-0-0
+sent rand 3997329994
+sent rand 6521068943
+sent rand 9044807892
+sent rand 11568546841
+sent rand 14092285790
+sent rand 16616024739
+sent rand 19139763688
+sent rand 21663502637
+received rand 3997329994
+received rand 6521068943
+received rand 9044807892
+received rand 11568546841
+received rand 14092285790
+received rand 16616024739
+received rand 19139763688
+sent rand 24187241586
+sent rand 26710980535
+sent rand 29234719484
+sent rand 31758458433
+received rand 21663502637
+received rand 24187241586
+received rand 26710980535
+received rand 29234719484
+sent rand 34282197382
+sent rand 36805936331
+sent rand 39329675280
+sent rand 41853414229
+received rand 31758458433
+received rand 34282197382
+received rand 36805936331
+sent rand 44377153178
+sent rand 46900892127
+received rand 39329675280
+sent rand 49424631076
+received rand 41853414229
+received rand 44377153178
+sent rand 51948370025
+sent rand 54472108974
+received rand 46900892127
+received rand 49424631076
+sent rand 56995847923
+received rand 51948370025
+received rand 54472108974
+sent rand 59519586872
+sent rand 62043325821
+sent rand 64567064770
+received rand 56995847923
+received rand 59519586872
+sent rand 67090803719
+received rand 62043325821
+received rand 64567064770
+sent rand 69614542668
+sent rand 72138281617
+received rand 67090803719
+received rand 69614542668
+sent rand 74662020566
+sent rand 77185759515
+received rand 72138281617
+received rand 74662020566
+received rand 77185759515
+slave pi: 3.14148 for id 27
+slave pi: 3.14174 for id 20
+slave pi: 3.14173 for id 8
+slave pi: 3.14182 for id 9
+slave pi: 3.14167 for id 11
+slave pi: 3.14174 for id 16
+slave pi: 3.14188 for id 12
+slave pi: 3.14169 for id 23
+slave pi: 3.14149 for id 18
+slave pi: 3.14156 for id 10
+slave pi: 3.14152 for id 19
+slave pi: 3.1418 for id 17
+slave pi: 3.14153 for id 13
+slave pi: 3.14173 for id 22
+slave pi: 3.1415 for id 25
+slave pi: 3.14154 for id 21
+slave pi: 3.14136 for id 1
+slave pi: 3.1413 for id 2
+slave pi: 3.14131 for id 6
+slave pi: 3.14144 for id 3
+slave pi: 3.14167 for id 28
+recieved pi 3.14136 from 1
+recieved pi 3.1413 from 2
+recieved pi 3.14144 from 3
+slave pi: 3.14184 for id 7
+slave pi: 3.14147 for id 24
+recieved pi 3.14154 from 4
+slave pi: 3.14154 for id 4
+slave pi: 3.14152 for id 30
+slave pi: 3.14114 for id 29
+slave pi: 3.14161 for id 5
+recieved pi 3.14161 from 5
+recieved pi 3.14131 from 6
+recieved pi 3.14184 from 7
+recieved pi 3.14173 from 8
+recieved pi 3.14182 from 9
+recieved pi 3.14156 from 10
+recieved pi 3.14167 from 11
+recieved pi 3.14188 from 12
+recieved pi 3.14153 from 13
+slave pi: 3.14163 for id 15
+recieved pi 3.14119 from 14
+recieved pi 3.14163 from 15
+recieved pi 3.14174 from 16
+recieved pi 3.1418 from 17
+recieved pi 3.14149 from 18
+recieved pi 3.14152 from 19
+recieved pi 3.14174 from 20
+recieved pi 3.14154 from 21
+recieved pi 3.14173 from 22
+recieved pi 3.14169 from 23
+recieved pi 3.14147 from 24
+recieved pi 3.1415 from 25
+slave pi: 3.14119 for id 14
+recieved pi 3.14169 from 26
+recieved pi 3.14148 from 27
+recieved pi 3.14167 from 28
+recieved pi 3.14114 from 29
+recieved pi 3.14152 from 30
+result pi is: 3.14156
+slave pi: 3.14169 for id 26
