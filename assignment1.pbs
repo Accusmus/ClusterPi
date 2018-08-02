@@ -1,4 +1,4 @@
-#PBS -j oe -o assignment1.stdout -l nodes=5:ppn=6 -q pp
+#PBS -j oe -o assignment1.stdout -l nodes=5:ppn=8 -q pp
 
 echo Read from $PBS_NODEFILE
 
@@ -6,5 +6,5 @@ echo This job runs on these processors:
 echo `cat $PBS_NODEFILE`
 
 # Make the appropriate changes to this line
-mpiexec -machinefile $PBS_NODEFILE -np 1 /home/s14303742/mpi_examples/Assignment1/assignment1 4000000000
+mpiexec -machinefile $PBS_NODEFILE -np 50 /home/s14303742/mpi_examples/Assignment1/assignment1 4000000000
 

@@ -1,6 +1,5 @@
-Read from /var/spool/torque/aux//20399.mighty.local
+Read from /var/spool/torque/aux//20569.mighty.local
 This job runs on these processors:
-compute-0-4 compute-0-4 compute-0-4 compute-0-4 compute-0-4 compute-0-4 compute-0-3 compute-0-3 compute-0-3 compute-0-3 compute-0-3 compute-0-3 compute-0-2 compute-0-2 compute-0-2 compute-0-2 compute-0-2 compute-0-2 compute-0-1 compute-0-1 compute-0-1 compute-0-1 compute-0-1 compute-0-1 compute-0-0 compute-0-0 compute-0-0 compute-0-0 compute-0-0 compute-0-0
-result pi is: 1.68662
-total time taken: 205.9
-communication time: 0
+compute-0-4 compute-0-4 compute-0-4 compute-0-4 compute-0-4 compute-0-4 compute-0-4 compute-0-4 compute-0-3 compute-0-3 compute-0-3 compute-0-3 compute-0-3 compute-0-3 compute-0-3 compute-0-3 compute-0-2 compute-0-2 compute-0-2 compute-0-2 compute-0-2 compute-0-2 compute-0-2 compute-0-2 compute-0-1 compute-0-1 compute-0-1 compute-0-1 compute-0-1 compute-0-1 compute-0-1 compute-0-1 compute-0-0 compute-0-0 compute-0-0 compute-0-0 compute-0-0 compute-0-0 compute-0-0 compute-0-0
+result pi is: 3.07873
+total time taken: 6.411

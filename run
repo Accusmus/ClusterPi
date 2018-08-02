@@ -1,2 +1,2 @@
-mpic++ assignment1.cpp -o assignment1
+mpic++ -O3 -o assignment1 assignment1.cpp
 qsub assignment1.pbs

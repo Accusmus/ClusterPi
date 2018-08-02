@@ -41,42 +41,54 @@ int main(int argc,char* argv[])
   totalIter = strtoul(argv[1], NULL, 0);
   iterPerProc = totalIter/numproc;
 
+  //timer to find out how long the whole program has taken to complete
   double t1 = MPI_Wtime();
-  double timerunning;
+
+  // if the master process
   if(myid == 0){
+    //random number to be used by the master process
     ULONG masterRand = createRandInt(0, numproc-1);
-    double totalPi;
+
+    //The total number of points from all processes that falls within the circle
+    ULONG totalHits = 0;
     
-    double comt1, comt2, d1 = 0, d2 = 0;
+    //Loop through all processes and give the starting random number seed
     for(int i = 1; i < numproc; i++){
-      ULONG rand = createRandInt(i, numproc-1);
-      comt1 = MPI_Wtime();
+      ULONG rand = 0; 
+      rand = createRandInt(i, numproc-1);
       MPI_Send(&rand, 1, MPI::UNSIGNED_LONG, i, 0, MPI_COMM_WORLD);
-      d1 += MPI_Wtime() - comt1;
     }
+    
+    //Master process should then start calculating pi
+    //totalHits = findPI(iterPerProc, masterRand, numproc);
 
-    ULONG pi = findPI(iterPerProc, masterRand, numproc);
-    totalPi += pi;
-
+    //We now need all of the number of hits for each process
     for(int i = 1; i < numproc; i++){
       ULONG slavepi;
-      comt2 = MPI_Wtime();
       MPI_Recv(&slavepi, 1, MPI::UNSIGNED_LONG, i, 0, MPI_COMM_WORLD, &Stat);
-      d2 += MPI_Wtime() - comt2;
-      totalPi += slavepi;
+      totalHits += slavepi;
     }
-    double dt = MPI_Wtime() - t1;
-    double result = totalPi/(iterPerProc*numproc);
-    cout << "result pi is: " << result*4 << endl;
-    cout << "total time taken: " << dt << endl;
-    dt = d1 + d2;
-    cout << "communication time: " << dt << endl;
 
-  }else if(myid > 0){ 
+    //time taken
+    double dt = MPI_Wtime() - t1;
+
+    //calculate pi from the hits and total number of samples
+    double pi = (double)totalHits/(iterPerProc*numproc) * 4;
+    cout << "result pi is: " << pi << endl;
+    cout << "total time taken: " << dt << endl;
+
+  // if the slave processes
+  }else if(myid > 0){
+      //First we recieve the random number generator seed      
       ULONG rand;
       MPI_Recv(&rand, 1, MPI::UNSIGNED_LONG, 0, 0, MPI_COMM_WORLD, &Stat);
-      ULONG pi = findPI(iterPerProc, rand, numproc-1);
-      MPI_Send(&pi, 1, MPI::UNSIGNED_LONG, 0, 0, MPI_COMM_WORLD);
+      // Calculate the number of hits
+      ULONG hits = 0;
+
+      hits = findPI(iterPerProc, rand, numproc-1);
+
+      //Return the number of hits to the master process
+      MPI_Send(&hits, 1, MPI::UNSIGNED_LONG, 0, 0, MPI_COMM_WORLD);
   }
 
   MPI::Finalize();
@@ -87,11 +99,12 @@ ULONG createRandInt(ULONG i, ULONG k){
 }
 
 bool inCircle(double x, double y){ 
-  double d = sqrt(pow(x - 0.5, 2) + pow(y - 0.5, 2));
-  if(abs(d) >= 0.5){
-    return false;
-  }
-  return true;
+  double dx = abs(x);
+  if(dx > 1) return false; 
+  double dy = abs(y);
+  if(dy > 1) return false; 
+  if(dx + dy <= 1) return true; 
+  return (dx*dx + dy*dy <= 1);
 }
 
 ULONG findPI(ULONG n, ULONG first, ULONG k){
@@ -102,13 +115,13 @@ ULONG findPI(ULONG n, ULONG first, ULONG k){
 
   for(int i = 0; i < n; i++){
     next = createRandInt(prev, k); 
-    double x = abs((double)next/m); 
-    double y = abs((double)prev/m); 
+    double x = (double)next/m; 
+    double y = (double)prev/m; 
 
     if(inCircle(x, y)){
-      numInside++; 
+      ++numInside; 
     }
-    numTotal ++; 
+    ++numTotal; 
     prev = next;
   }
 
